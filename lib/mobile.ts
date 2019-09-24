@@ -7,9 +7,11 @@ export const isWechat = () => /MicroMessenger/.test(ua);
 export const isPc = () => !isIos() && !isAndroid() && !isWechat();
 
 export const setMobileTouch = () => {
-  if (isPc()) {
+  if (isPc() || (window as any).__isUseMobileTouch) {
     return;
   }
+
+  (window as any).__isUseMobileTouch = true;
   // touch-action: manipulation; 启用平移和捏合缩放手势，但禁用其他非标准手势
   const nextCss = `
     * {
@@ -21,16 +23,10 @@ export const setMobileTouch = () => {
     }
   `;
 
-  const id = 'mobile-touch-style-';
-  const lastStyle = document.getElementById(id);
-  if (lastStyle) {
-    lastStyle.textContent = nextCss;
-  } else {
-    const styleEle = document.createElement('style');
-    styleEle.textContent = nextCss;
-    styleEle.id = id;
-    document.head.append(styleEle);
-  }
+  const styleEle = document.createElement('style');
+  styleEle.textContent = nextCss;
+  styleEle.id = 'mobile-touch-style-';
+  document.head.append(styleEle);
 
   /** 阻止双指放大; */
   document.addEventListener('gesturestart', function(event) {
@@ -101,15 +97,15 @@ export const setMobileScroll = (view: any) => {
       }
     });
   }
-};
 
-const setAttribute = (HTMLElement.prototype as any).setAttribute;
-HTMLElement.prototype.setAttribute = function(key: string, value: string) {
-  if (key === 'mobile-scroll' && value) {
-    setMobileScroll(this);
-  } else {
-    setAttribute.call(this, key, value);
-  }
+  const setAttribute = (HTMLElement.prototype as any).setAttribute;
+  HTMLElement.prototype.setAttribute = function(key: string, value: string) {
+    if (key === 'mobile-touch' && value) {
+      setMobileScroll(this);
+    } else {
+      setAttribute.call(this, key, value);
+    }
+  };
 };
 
 setMobileTouch();

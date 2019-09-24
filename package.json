@@ -1,6 +1,6 @@
 {
   "name": "mobile-touch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "es/mobile.js",
   "types": "es/mobile.d.ts",
