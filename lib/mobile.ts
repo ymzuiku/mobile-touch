@@ -66,6 +66,15 @@ export const setMobileTouch = () => {
     },
     { passive: false }
   );
+
+  const setAttribute = (HTMLElement.prototype as any).setAttribute;
+  HTMLElement.prototype.setAttribute = function(key: string, value: string) {
+    if (key === 'mobile-touch' && value) {
+      setMobileScroll(this);
+    } else {
+      setAttribute.call(this, key, value);
+    }
+  };
 };
 
 export const setMobileScroll = (view: any) => {
@@ -97,15 +106,6 @@ export const setMobileScroll = (view: any) => {
       }
     });
   }
-
-  const setAttribute = (HTMLElement.prototype as any).setAttribute;
-  HTMLElement.prototype.setAttribute = function(key: string, value: string) {
-    if (key === 'mobile-touch' && value) {
-      setMobileScroll(this);
-    } else {
-      setAttribute.call(this, key, value);
-    }
-  };
 };
 
 setMobileTouch();
