@@ -2,7 +2,7 @@
 
 引入 mobile-touch, 若设备为移动设备, 可以让整个页面的滚动更接近 native：
 
-## feature
+## Feature
 
 1. 双击屏幕不会缩放
 2. 双手指捏合不会缩放屏幕
