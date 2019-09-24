@@ -1,0 +1,16 @@
+{
+  "name": "mobile-touch",
+  "version": "0.1.0",
+  "private": false,
+  "main": "es/mobile.js",
+  "types": "es/mobile.d.ts",
+  "repository": "git@github.com:ymzuiku/mobile-touch.git",
+  "author": "梁柱 <ymblender@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lib": "tscu lib --outDir es"
+  },
+  "devDependencies": {
+    "tscu": "^1.3.3"
+  }
+}
