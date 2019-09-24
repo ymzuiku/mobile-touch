@@ -1,29 +1,31 @@
-# 让移动端更接近 native
+# Makes the mobile web App closer to native App
 
-引入 mobile-touch，若设备为移动设备，可以让整个页面的滚动更接近 native，支持 Typescript
+中文文档: [README-CN](./README-CN.md)
 
-零配置，轻量：< 1kb (Gzip)
+The introduction of mobile-touch, if the device is a mobile device, can make the whole page scroll closer to native and support Typescript
+
+Zero configuration, tiny, less than 1kb (Gzip)
 
 ## Feature
 
-触屏:
+Touch:
 
-1. 双击屏幕不会缩放
-2. 双手指捏合不会缩放屏幕
+1. Double-clicking the screen will not scale
+2. Finger kneading won't zoom in on the screen
 
-滚动:
+Scroll:
 
-1. 滚动区域接收滚动手势时，可以快速响应，解决切换 overflow 时，滚动无响应问题
-2. 拦截所有滚动，滚动不会显示浏览器背景，若有需要滚动的区域，单独添加 `mobile-touch` 属性
+1. When the scroll area receives the scroll gesture, it can respond quickly and solve the problem of no response when switching overflow
+2. Block all scrolling. Scrolling will not show the background of the browser
 
-键盘:
+Keyboard:
 
-1. iOS 键盘出现时，点击空白区域自动收起键盘
-2. iOS 键盘出现时，自动调整滚动区域
+1. When the iOS keyboard appears, click the blank area to automatically close the keyboard
+2. Automatically adjust the scroll area when the iOS keyboard appears
 
 ## API
 
-没有必要的 API，只需要引入库，若有需要滚动的列表，单独添加 mobile-touch 属性即可
+There is no necessary API, just need to import the library, if there is a need to scroll list, add a separate mobile-touch property
 
 ```js
 import 'mobile-touch'
