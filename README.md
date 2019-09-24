@@ -9,7 +9,7 @@ Zero configuration, tiny, less than 1kb (Gzip)
 ## Install
 
 ```sh
-npm i mobile-touch
+npm i mobile-touch --save
 ```
 
 ## Feature
