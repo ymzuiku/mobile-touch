@@ -21,6 +21,7 @@ export const setMobileTouch = () => {
     .can-user-select, input, textarea {
       -moz-user-select:auto; -webkit-user-select:auto;-ms-user-select:auto; user-select:auto;
     }
+    body { padding: 0px; marging: 0px; }
   `;
 
   const styleEle = document.createElement('style');
