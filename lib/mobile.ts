@@ -26,7 +26,16 @@ export const setMobileTouch = () => {
   const styleEle = document.createElement('style');
   styleEle.textContent = nextCss;
   styleEle.id = 'mobile-touch-style-';
-  document.head.append(styleEle);
+
+  const mateEle = document.createElement('meta');
+  mateEle.setAttribute('name', 'viewport');
+  mateEle.setAttribute(
+    'content',
+    'width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover'
+  );
+  mateEle.id = 'mobile-touch-mate-';
+
+  document.head.append(styleEle, mateEle);
 
   /** 阻止双指放大; */
   document.addEventListener('gesturestart', function(event) {
