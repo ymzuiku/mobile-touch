@@ -6,6 +6,12 @@ The introduction of mobile-touch, if the device is a mobile device, can make the
 
 Zero configuration, tiny, less than 1kb (Gzip)
 
+## Install
+
+```sh
+npm i mobile-touch
+```
+
 ## Feature
 
 Touch:

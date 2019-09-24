@@ -4,7 +4,13 @@
 
 零配置，轻量：< 1kb (Gzip)
 
-## Feature
+## 安装
+
+```sh
+npm i mobile-touch
+```
+
+## 特性
 
 触屏:
 
