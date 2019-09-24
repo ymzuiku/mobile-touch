@@ -7,7 +7,7 @@
 ## 安装
 
 ```sh
-npm i mobile-touch
+npm i mobile-touch --save
 ```
 
 ## 特性
