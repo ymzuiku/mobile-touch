@@ -2,6 +2,8 @@
 
 引入 mobile-touch，若设备为移动设备，可以让整个页面的滚动更接近 native，支持 Typescript
 
+零配置，轻量：900b(Gzip)
+
 ## Feature
 
 触屏:
