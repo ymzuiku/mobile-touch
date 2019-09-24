@@ -51,8 +51,7 @@ export const setMobileTouch = () => {
     }
   };
   document.body.addEventListener('focusin', e => {
-    //软键盘弹起事件
-    // alert(1);
+    // 软键盘弹起事件
     keyboardFocusInput = e.target;
     bodyScrollTop = document.body.scrollTop;
     setTimeout(() => {
@@ -60,8 +59,7 @@ export const setMobileTouch = () => {
     }, 50);
   });
   document.body.addEventListener('focusout', () => {
-    //软键盘关闭事件
-    // alert(2);
+    // 软键盘关闭事件
     document.body.scrollTop = bodyScrollTop;
     keyboardFocusInput = false;
     document.body.removeEventListener('touchend', bindBlurKeyboard);
